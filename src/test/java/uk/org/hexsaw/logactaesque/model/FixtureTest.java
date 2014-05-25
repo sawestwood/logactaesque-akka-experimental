@@ -1,13 +1,10 @@
-package uk.org.hexsaw.logactaesque;
+package uk.org.hexsaw.logactaesque.model;
 
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertThat;
 
 import org.junit.Before;
 import org.junit.Test;
-
-import uk.org.hexsaw.logactaesque.model.Fixture;
-import uk.org.hexsaw.logactaesque.model.Team;
 
 
 public class FixtureTest {
@@ -16,7 +13,7 @@ public class FixtureTest {
     
     @Before 
     public void setUp() {
-        fixture = new Fixture(new Team(), new Team());
+        fixture = new Fixture(FakeTeam.TEAM_MAN_UTD, FakeTeam.TEAM_WBA);
     }
 
     @Test
