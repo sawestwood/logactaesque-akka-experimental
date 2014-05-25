@@ -32,5 +32,10 @@ public class FixtureResult {
     public void setAwayGoals(int awayGoals) {
         this.awayGoals = awayGoals;
     }    
+    
+    @Override
+    public String toString() {
+        return String.format("FixtureResult [%s %s - %s %s]", fixture.getHomeTeam().getShortName(), homeGoals, awayGoals, fixture.getAwayTeam().getShortName());
+    }
 
 }

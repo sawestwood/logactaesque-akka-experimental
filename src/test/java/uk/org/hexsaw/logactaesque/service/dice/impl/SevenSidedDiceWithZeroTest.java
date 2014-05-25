@@ -1,4 +1,4 @@
-package uk.org.hexsaw.logactaesque.engine.dice.impl;
+package uk.org.hexsaw.logactaesque.service.dice.impl;
 
 import static org.hamcrest.CoreMatchers.anyOf;
 import static org.hamcrest.CoreMatchers.is;
@@ -6,7 +6,8 @@ import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
 
-import uk.org.hexsaw.logactaesque.engine.dice.Rollable;
+import uk.org.hexsaw.logactaesque.service.dice.Rollable;
+import uk.org.hexsaw.logactaesque.service.dice.impl.SevenSidedDiceWithZero;
 
 public class SevenSidedDiceWithZeroTest {
 

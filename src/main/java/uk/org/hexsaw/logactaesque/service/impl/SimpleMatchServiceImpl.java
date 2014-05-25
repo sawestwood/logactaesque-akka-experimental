@@ -1,13 +1,13 @@
-package uk.org.hexsaw.logactaesque.engine.impl;
+package uk.org.hexsaw.logactaesque.service.impl;
 
-import uk.org.hexsaw.logactaesque.engine.MatchEngine;
-import uk.org.hexsaw.logactaesque.engine.dice.Rollable;
-import uk.org.hexsaw.logactaesque.engine.dice.impl.SevenSidedDiceWithZero;
 import uk.org.hexsaw.logactaesque.model.Fixture;
 import uk.org.hexsaw.logactaesque.model.FixtureResult;
+import uk.org.hexsaw.logactaesque.service.MatchService;
+import uk.org.hexsaw.logactaesque.service.dice.Rollable;
+import uk.org.hexsaw.logactaesque.service.dice.impl.SevenSidedDiceWithZero;
 
 
-public class BasicMatchEngineImpl implements MatchEngine {
+public class SimpleMatchServiceImpl implements MatchService {
     
     private static Rollable DICE = new SevenSidedDiceWithZero();
 

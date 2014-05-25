@@ -1,18 +1,17 @@
-package uk.org.hexsaw.logactaesque.engine.dice.impl;
+package uk.org.hexsaw.logactaesque.service.dice.impl;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
-import uk.org.hexsaw.logactaesque.engine.dice.Rollable;
+import uk.org.hexsaw.logactaesque.service.dice.Rollable;
 
 public class SevenSidedDiceWithZero implements Rollable {
 
     private List<Integer> faces = Arrays.asList(new Integer[] {0,1,2,3,4,5,6});
     
-    private Random randomizer = new Random();
-    
     public int roll() {
+        Random randomizer = new Random(System.currentTimeMillis());
         return faces.get(1 + randomizer.nextInt(faces.size()-1));
     }
 
