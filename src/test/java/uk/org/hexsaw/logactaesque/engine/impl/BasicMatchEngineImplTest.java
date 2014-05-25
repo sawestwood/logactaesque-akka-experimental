@@ -1,17 +1,21 @@
 package uk.org.hexsaw.logactaesque.engine.impl;
 
-import static org.hamcrest.CoreMatchers.notNullValue;
-import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.not;
+import static org.junit.Assert.assertThat;
 
 import org.junit.Before;
 import org.junit.Test;
 
+import uk.org.hexsaw.logactaesque.model.FakeFixture;
 import uk.org.hexsaw.logactaesque.model.Fixture;
+import uk.org.hexsaw.logactaesque.model.FixtureResult;
 
 
 public class BasicMatchEngineImplTest {
 
     private BasicMatchEngineImpl matchEngine;
+    
+    private Fixture fixture = FakeFixture.WBA_v_MANUTD;
 
     @Before
     public void setUp() throws Exception {
@@ -19,9 +23,11 @@ public class BasicMatchEngineImplTest {
     }
 
     @Test
-    public void canPlayAMatch() {
-        Fixture fixture = null;
-        assertThat(matchEngine.playFixture(fixture), notNullValue());
+    public void canPlayAMatchAndGetAResult() {
+        FixtureResult fixtureResult = matchEngine.playFixture(fixture);
+        assertThat(fixtureResult.getHomeGoals(), not(FixtureResult.NOT_KICKED_OFF));
+        assertThat(fixtureResult.getAwayGoals(), not(FixtureResult.NOT_KICKED_OFF));
     }
+    
 
 }

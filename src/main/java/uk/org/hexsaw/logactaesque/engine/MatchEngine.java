@@ -1,10 +1,11 @@
 package uk.org.hexsaw.logactaesque.engine;
 
 import uk.org.hexsaw.logactaesque.model.Fixture;
+import uk.org.hexsaw.logactaesque.model.FixtureResult;
 
 
 public interface MatchEngine {
 
-    Object playFixture(Fixture fixture);
+    FixtureResult playFixture(Fixture fixture);
 
 }
