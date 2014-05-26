@@ -17,5 +17,10 @@ public class Fixture {
     public Team getAwayTeam() {
         return this.awayTeam;
     }
+    
+    @Override
+    public String toString() {
+        return String.format("Fixture [%s vs. %s]", this.homeTeam.getShortName(), this.awayTeam.getShortName());
+    }
 
 }
