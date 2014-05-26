@@ -11,8 +11,9 @@ public class SevenSidedDiceWithZero implements Rollable {
     private List<Integer> faces = Arrays.asList(new Integer[] {0,1,2,3,4,5,6});
     
     public int roll() {
-        Random randomizer = new Random(System.currentTimeMillis());
-        return faces.get(1 + randomizer.nextInt(faces.size()-1));
+        //Random randomizer = new Random(System.currentTimeMillis());
+        // return faces.get(randomizer.nextInt(faces.size()-1));
+        return faces.get(new Random().nextInt(faces.size()));
     }
 
 }

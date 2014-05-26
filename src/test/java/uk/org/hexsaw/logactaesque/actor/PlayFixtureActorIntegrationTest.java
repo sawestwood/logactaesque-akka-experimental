@@ -1,7 +1,6 @@
 package uk.org.hexsaw.logactaesque.actor;
 
-import static org.junit.Assert.*;
-
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -16,16 +15,22 @@ import akka.actor.Props;
 public class PlayFixtureActorIntegrationTest {
     
     private static final Logger logger = LoggerFactory.getLogger(PlayFixtureActorIntegrationTest.class);
+    
+    private ActorSystem actorSystem  = null;
 
     @Before
-    public void setUp()
-        throws Exception {
+    public void setUp() throws Exception {
+        actorSystem = ActorSystem.create("Logactaesque");
+    }
+    
+    @After
+    public void tearDown() {
+        actorSystem.shutdown();
     }
 
     @Test
     public void canPassAMessageToThisActor() {
-        ActorSystem system = ActorSystem.create("Logactaesque");
-        ActorRef playFixture = system.actorOf(Props.create(PlayFixtureActor.class), "playFixture");
+        ActorRef playFixture = actorSystem.actorOf(Props.create(PlayFixtureActor.class), "playFixture");
         playFixture.tell(FakeFixture.WBA_v_MANUTD, ActorRef.noSender());
     }
 
