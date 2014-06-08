@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import uk.org.hexsaw.logactaesque.model.FakeFixture;
+import uk.org.hexsaw.logactaesque.service.impl.SimpleMatchServiceImpl;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
@@ -30,8 +31,9 @@ public class PlayFixtureActorIntegrationTest {
 
     @Test
     public void canPassAMessageToThisActor() {
-        ActorRef playFixture = actorSystem.actorOf(Props.create(PlayFixtureActor.class), "playFixture");
+        ActorRef playFixture = actorSystem.actorOf(Props.create(PlayFixtureActor.class, new SimpleMatchServiceImpl()), "playFixture");
         playFixture.tell(FakeFixture.WBA_v_MANUTD, ActorRef.noSender());
+        logger.info(playFixture.toString());
     }
 
 }
