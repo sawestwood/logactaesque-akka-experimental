@@ -1,4 +1,4 @@
-Logactaesque
-============
+Logactaesque Akka Experimental
+==============================
 
-1970's chart soccer relived in the 21st Century...
+Use an akka actor system to play a football game...
